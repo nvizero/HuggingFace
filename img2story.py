@@ -41,10 +41,10 @@ def generate_story(scenario):
 
  
 
-
  
 scenario = img2text("aa.png")
 story = generate_story(scenario)
+
 
 # 以下是AI 產出的內容 
 #> Finished chain.
@@ -70,5 +70,20 @@ story = generate_story(scenario)
 #
 #在每一片夜空下，這隻窮光蛋的狗總是默默地關注著每個過往者，儘管再貧困，再困難，卻依然保持著微笑，那是他用大鼻子找到的最珍貴的寶藏。
 
+#音頻
+import requests
 
+def querya(msg):
+    API_URL = "https://api-inference.huggingface.co/models/espnet/kan-bayashi_ljspeech_vits"
+    headers = {"Authorization": "Bearer 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"}
 
+    payload = {
+        "inputs": msg
+    }
+
+    response = requests.post(API_URL, headers=headers, json=payload)
+    with open('audio.flac', 'wb') as file:
+        file.write(response.content)
+
+querya("傻B")
+#會在目錄下生成一個音頻檔audio.flac ,然後下載播放即可
