@@ -1,14 +1,10 @@
-
-
-
-
 from transformers import pipeline
 from langchain import PromptTemplate , LLMChain
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import HumanMessage
 import os
 
-
+# yt 完整教學 https://www.youtube.com/watch?v=gkZvrPhzHRQ
 def img2text(url):
   image_to_text = pipeline("image-to-text",model="Salesforce/blip-image-captioning-base")
   text = image_to_text(url)[0]["generated_text"]
