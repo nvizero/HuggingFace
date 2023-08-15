@@ -3,7 +3,20 @@ from langchain import PromptTemplate , LLMChain
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import HumanMessage
 import os
+"""
 
+在colab要先裝以下套件
+
+!pip install transformers
+!pip install langchain
+
+!pip install langchain==0.0.235 openai
+!pip install matplotlib-venn
+!apt-get -qq install -y libfluidsynth1
+!pip install openai
+
+
+"""
 # yt 完整教學 https://www.youtube.com/watch?v=gkZvrPhzHRQ
 def img2text(url):
   image_to_text = pipeline("image-to-text",model="Salesforce/blip-image-captioning-base")
