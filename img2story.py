@@ -14,8 +14,6 @@ import os
 !pip install matplotlib-venn
 !apt-get -qq install -y libfluidsynth1
 !pip install openai
-
-
 """
 # yt 完整教學 https://www.youtube.com/watch?v=gkZvrPhzHRQ
 def img2text(url):
